@@ -1,6 +1,6 @@
 
 .main{
-    height: 70vh;
+    height: fit-content;
     background-color: #1e242b;
     padding: 20px;
     border-radius: 20px;
