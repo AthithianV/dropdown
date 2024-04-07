@@ -7,7 +7,9 @@ export default function DropDown() {
   const [showList, setShowList] = useState(false);
 
   return (
+    // Container
     <div className={styles.main}>
+      {/* When choice is null nothing is display, when choice is set to any language then that langugae logo is displayed. */}
       {choice ? (
         <div style={{ textAlign: "center" }}>
           <img className={styles.choiceImg} src={choice.img} alt="choice" />
@@ -15,9 +17,13 @@ export default function DropDown() {
       ) : (
         <></>
       )}
+
+      {/* Prompt */}
       <h1 className={styles.heading}>Choose Your favourite language:</h1>
 
+      {/* Actual dropdown */}
       <div className={styles.dropdown}>
+        {/* Here is the select element onClicking or hovering it we will display the optioons */}
         <div
           className={styles.title}
           onMouseEnter={() => setShowList(true)}
@@ -30,6 +36,8 @@ export default function DropDown() {
             alt="arrow-down"
           />
         </div>
+
+        {/* OptionList - When showList state is set to true, then the list is displayed else list is hidden */}
         {showList ? (
           <ul className={styles.list}>
             {languages.map((lan, index) => (
