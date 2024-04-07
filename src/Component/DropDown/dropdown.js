@@ -8,16 +8,21 @@ export default function DropDown() {
 
   return (
     <div className={styles.main}>
-      <h1 className={styles.heading}>Choose Your favourite language:</h1>
       {choice ? (
-        <div style={{textAlign:"center"}}>
+        <div style={{ textAlign: "center" }}>
           <img className={styles.choiceImg} src={choice.img} alt="choice" />
         </div>
       ) : (
         <></>
       )}
+      <h1 className={styles.heading}>Choose Your favourite language:</h1>
+
       <div className={styles.dropdown}>
-        <div className={styles.title} onClick={() => setShowList(!showList)}>
+        <div
+          className={styles.title}
+          onMouseEnter={() => setShowList(true)}
+          onClick={() => setShowList(!showList)}
+        >
           Select{" "}
           <img
             className={`${styles.img} ${showList ? styles.showList : null}`}
